@@ -44,4 +44,30 @@ Lorsque l'on a simplement besoin de comprendre ses données et les explorer, on 
 
 ## Partie 2 : Entrainement d'un modèle k-NN
 
+### Jeu de données : Mnist
+
+Example :  
+
+![](./images/mnist_example.png)
+
+Choix de la valeur k :
+```python
+k_np = np.arange(1, 16, 1)
+errors = np.zeros(15, dtype=float)
+knn = neighbors.KNeighborsClassifier()
+
+for k in k_np:
+    knn.n_neighbors = k
+    knn.fit(xtrain, ytrain)
+    errors[k-1] = 1 - knn.score(xtest, ytest)
+```
+
+![](./images/k_value.png)  
+Taux d'erreur d'environ 5% pour k = 4.
+
+Mise en avant des echecs de prédiction :  
+
+![](./images/mnist_error.png)
+
+
 ## Partie 3 : Limites et problème du ML
