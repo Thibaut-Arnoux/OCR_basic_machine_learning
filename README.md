@@ -69,5 +69,19 @@ Mise en avant des echecs de prédiction :
 
 ![](./images/mnist_error.png)
 
-
 ## Partie 3 : Limites et problème du ML
+
+- **Le théorème "No Free Lunch"** : Il n'existe pas d'algorithme et modèle "ultime", applicable pour tous les problèmes.
+- **Les problèmes insolubles** : Appelée intractability en anglais, cette notion désigne les problèmes qui ne peuvent être résolus dans un temps raisonnable, qui explosent en terme de complexité algorithmique.
+- **Variance** : Désigne une dépendance très forte au training set, autrement dit une variation très forte de la décision en fonction des données d'entraînement. Cette variabilité est appelée, à juste titre, variance du modèle.
+- **Biais** : Correspond en quelque sorte à quel point on vise à côté de la "vraie" valeur d'un point considéré.  
+
+![](./images/erreur_modele.jpg)
+
+En utilisant un modèle comportant une trop grande complexité – dit "à haute variance" – on peut mal capturer le phénomène sous-jacent et devenir trop dépendant aux données d'entraînement et aux petites fluctuations aléatoires, non représentatives du phénomène.
+
+A contrario, il ne faut pas choisir un modèle trop "simple" qui biaise le résultat et ne parvient pas à capturer toute la complexité du phénomène.
+
+- **Overfitting** : Désigne le fait que le modèle que vous avez choisi est trop collé aux données d'entraînement. C'est un problème classique de data science, lorsqu'on choisi un modèle trop "flexible", c'est-à-dire avec une complexité trop élevée qui prend aussi en compte le bruit du phénomène. C'est en fait ce qui arrive aux méthodes à haute variance.
+- **Underfitting** : Désigne une situation où le modèle n'est pas du tout assez complexe pour capturer le phénomène dans son intégralité. Les algorithmes avec un biais élevé ont tendance à underfitter plus facilement les données d'entraînement, et donc à rater des informations importantes sur le phénomène.
+- **Fléau de la dimension** (curse of dimensionality) : Si on augmente le nombre de features, il devient de plus en plus difficile d'avoir assez de données d'entraînement aux alentours pour pouvoir effectuer une prédiction correcte.
